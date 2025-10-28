@@ -2,7 +2,7 @@ public class Palindrome {
     public static void main(String args[]) {
         for (int i = 0; i < args.length; i++ ) {
             String s = args[i];
-            System.out.println(isPalidrome(s));
+            System.out.println(isPalindrome(s));
         }
     }
 
@@ -16,7 +16,7 @@ public class Palindrome {
         return reversed;
     }
 
-    public static boolean isPalidrome(String s) {
+    public static boolean isPalindrome(String s) {
         return s.equals(reverseString(s));
     }
 }
