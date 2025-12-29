@@ -12,6 +12,10 @@ class Order {
         this.deliveryaddress = deliveryaddress;
         this.cost = cost;
     }
+    @Override
+    public String toString() {
+        return "Товар: '" + product + "', " + "Адрес доставки: '" + deliveryaddress + "', " + "Цена: " + cost + " руб.";
+    }
 
     public String getproduct(){
         return product;

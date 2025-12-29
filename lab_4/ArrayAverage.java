@@ -11,7 +11,7 @@ public class ArrayAverage {
         };
 
         try {
-            for (int i = 0; i < numbers.length; i++) {
+            for (int i = -1; i < numbers.length; i++) {
                 try {
                     if (numbers[i] instanceof Integer){
                         sum += (Integer) numbers[i];

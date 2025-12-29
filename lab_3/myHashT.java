@@ -47,7 +47,7 @@ public class myHashT<K, V> {
                 entry.setValue(value);
                 return;
             }
-        }
+        }   
 
         table[index].add(new Entry<K, V> (key, value));
         size++;
@@ -58,14 +58,15 @@ public class myHashT<K, V> {
     }
 
     public V get(K key) {
-        for (Entry<K, V> entry : table[hash(key)]) {
+        int index = hash(key);
+        if (table[index] == null) return null;  // Проверить сначала!
+        for (Entry<K, V> entry : table[index]) {
             if (entry.getKey().equals(key)) {
                 return entry.getValue();
             }
         }
-
         return null;
-    }
+}
 
     
     public V remove(K key) {

@@ -7,7 +7,6 @@ public class FindUpperAfterLower {
 
         String text = "asdsada dasd aADdsads asdaSds";
 
-        // Находит строчную букву, за которой сразу следует заглавная буква
         Pattern pattern = Pattern.compile("([a-z])([A-Z])");
         Matcher matcher = pattern.matcher(text);
 
@@ -15,3 +14,16 @@ public class FindUpperAfterLower {
         System.out.println(result);
     }
 }
+
+// Текст: "aADdsads asdaSds"
+//         ↑
+// Шаг 1: `([a-z])` - находит строчную "a" (запоминает как группу 1)
+// Шаг 2: `([A-Z])` - следующая буква "A" - заглавная (запоминает как группу 2)
+// Найдено: "aA" → заменяется на "!aA!"
+
+// Продолжает: "Ddsads asdaSds"
+//             ↑
+// Шаг 1: "D" - не строчная, пропускаем
+// Шаг 2: "d" - строчная, но следующая "s" - не заглавная, пропускаем
+// ...
+// Шаг N: "aS" → "a" (строчная) + "S" (заглавная) = замена на "!aS!"

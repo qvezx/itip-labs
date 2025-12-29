@@ -12,7 +12,7 @@ public class CustomFileReader {
         } catch (NoSuchFileException e) {
             System.out.println("File not found");
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace("Другие ошибки");
         }
     }
 }
